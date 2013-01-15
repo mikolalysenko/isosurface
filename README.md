@@ -3,9 +3,16 @@ isosurface
 
 Isosurface polygonizer algorithms in JavaScript.  For more details, see the following blog posts:
 
+http://0fps.wordpress.com/2012/08/29/what-is-a-solid/
+
 http://0fps.wordpress.com/2012/07/10/smooth-voxel-terrain-part-1/
 
 http://0fps.wordpress.com/2012/07/12/smooth-voxel-terrain-part-2/
+
+Or try out the following live demo:
+
+http://mikolalysenko.github.com/Isosurface/
+
 
 Usage
 =====
