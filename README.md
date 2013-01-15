@@ -1,0 +1,4 @@
+isosurface
+==========
+
+Isosurface polygonizer algorithms
