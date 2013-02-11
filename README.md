@@ -34,7 +34,7 @@ Params:
 
 Returns: A mesh object with the following members:
 * `positions`: The coordinates of the vertices of the mesh
-* `faces`: The faces of the mesh.
+* `cells`: The faces of the mesh.
 
 `require("isosurface").marchingCubes(dims, potential[, bounds])`
 --------------------------------------------------------------
