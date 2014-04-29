@@ -3,28 +3,37 @@ isosurface
 
 Isosurface polygonizer algorithms in JavaScript.  For more details, see the following blog posts:
 
-http://0fps.wordpress.com/2012/08/29/what-is-a-solid/
+* [What is a solid?](http://0fps.wordpress.com/2012/08/29/what-is-a-solid/)
+* Smooth voxel terrain [Part 1](http://0fps.wordpress.com/2012/07/10/smooth-voxel-terrain-part-1/) [Part 2](http://0fps.wordpress.com/2012/07/12/smooth-voxel-terrain-part-2/)
 
-http://0fps.wordpress.com/2012/07/10/smooth-voxel-terrain-part-1/
+[Or try out a live demo](http://mikolalysenko.github.com/Isosurface/)
 
-http://0fps.wordpress.com/2012/07/12/smooth-voxel-terrain-part-2/
+# Example
 
-Or try out the following live demo:
+```javascript
+var isosurface = require("isosurface")
 
-http://mikolalysenko.github.com/Isosurface/
+var mesh = isosurface.surfaceNets([64,64,64], function(x,y,z) {
+  return x*x + y*y + z*z - 100
+}, [[-11,-11,-11], [11,11,11]])
+
+console.log(mesh)
+```
 
 
-Usage
-=====
+# Install
 
-First, install the library via npm:
-
-    npm install isosurface
+```
+npm install isosurface
+```
     
+# API
 
-`require("isosurface").surfaceNets(dims, potential[, bounds])`
---------------------------------------------------------------
+```javascript
+var isosurface = require("isosurface")
+```
 
+#### `isosurface.surfaceNets(dims, potential[, bounds])`
 Extracts an isosurface from `potential` using surface nets with resolution given by `dims`.
 
 Params:
@@ -36,18 +45,14 @@ Returns: A mesh object with the following members:
 * `positions`: The coordinates of the vertices of the mesh
 * `cells`: The faces of the mesh.
 
-`require("isosurface").marchingCubes(dims, potential[, bounds])`
---------------------------------------------------------------
+#### `isosurface..marchingCubes(dims, potential[, bounds])`
 
 Same as above, except uses marching cubes instead of surface nets to extract the isosurface.
 
-`require("isosurface").marchingTetrahedra(dims, potential[, bounds])`
---------------------------------------------------------------
+#### `isosurface.marchingTetrahedra(dims, potential[, bounds])`
 
 Same as above, except uses marching tetrahedra instead of surface nets to extract the isosurface.
 
 
-Acknowledgements
-================
-
-(c) 2012-2013 Mikola Lysenko.  MIT License
+# Credits
+(c) 2012-2014 Mikola Lysenko.  MIT License
